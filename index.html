@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>header</title>
+    <link rel="stylesheet" href="./index.css" />
+  </head>
+  <body>
+    <div id="root">
+        <section class="me">
+            <img id="image" src="./img/ask.png" alt="ask" />
+        </section>
+        <aside class="cirkel"></aside>
+        <aside class="cirkel1"></aside>
+        <aside class="cirkel2"></aside>
+        <aside class="info">
+            <h1>Ask Me Anything</h1>
+            <!-- <p>Welcome to the AMA bot! Feel free to ask any questions you have, and I'll do my best to provide helpful answers.</p> -->
+        </aside>
+        <section id="demo" class="svar">
+            <p></p>
+        </section>
+        <form class="form" onsubmit="event.preventDefault(); i = 0; document.getElementById('demo').innerHTML = ''; typeWriter();">
+            <input class="input" type="text" placeholder="Type your question here..." />
+        </form>
+
+    </div>
+    <script>
+var i = 0;
+var txt = 'Svaret på dit spørgsmål kommer her.';
+var speed = 50;
+
+
+
+function typeWriter() {
+  if (i < txt.length) {
+    document.getElementsByClassName("svar")[0].style.display = "block";
+    document.getElementById("demo").innerHTML += txt.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+   
+    document.getElementById("image").src='./img/answer1.png';
+
+
+}
+setTimeout(answer, 2000);
+  function answer() {
+    document.getElementById("image").src='./img/answerdone.png';
+
+    setTimeout(reset, 5000);  
+  }
+ function reset() {
+    if (i >= txt.length) {
+      document.getElementById("image").src='./img/ask.png';
+      document.getElementById("demo").innerHTML = "Stil mig et nyt spørgsmål!";
+      i = 0;
+    }
+  }
+}
+
+</script>
+  </body>
+</html>
