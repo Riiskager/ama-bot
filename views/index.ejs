@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <title>header</title>
-    <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <div id="root">
         <section class="me">
-            <img id="image" src="./img/ask.png" alt="ask" />
+            <img id="image" src="/img/ask.png" alt="ask" />
         </section>
         <aside class="cirkel"></aside>
         <aside class="cirkel1"></aside>
@@ -19,8 +19,8 @@
         <section id="demo" class="svar">
             <p></p>
         </section>
-        <form class="form" onsubmit="event.preventDefault(); i = 0; document.getElementById('demo').innerHTML = ''; typeWriter();">
-            <input class="input" type="text" placeholder="Type your question here..." />
+        <form method="POST" action="/ask" class="form" onsubmit="event.preventDefault(); i = 0; document.getElementById('demo').innerHTML = ''; typeWriter();">
+            <input name="question" class="input" type="text" placeholder="Type your question here..." />
         </form>
 
     </div>
@@ -38,19 +38,19 @@ function typeWriter() {
     i++;
     setTimeout(typeWriter, speed);
    
-    document.getElementById("image").src='./img/answer1.png';
+    document.getElementById("image").src='/img/answer1.PNG';
 
 
 }
 setTimeout(answer, 2000);
   function answer() {
-    document.getElementById("image").src='./img/answerdone.png';
+    document.getElementById("image").src='/img/answerdone.png';
 
     setTimeout(reset, 5000);  
   }
  function reset() {
     if (i >= txt.length) {
-      document.getElementById("image").src='./img/ask.png';
+      document.getElementById("image").src='/img/ask.png';
       document.getElementById("demo").innerHTML = "Stil mig et nyt spørgsmål!";
       i = 0;
     }
