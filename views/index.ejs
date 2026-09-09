@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>header</title>
+    <title>Ama-bot</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
@@ -19,12 +19,20 @@
         <section id="demo" class="svar">
             <p></p>
         </section>
-        <form method="POST" action="/ask" class="form" onsubmit="event.preventDefault(); i = 0; document.getElementById('demo').innerHTML = ''; typeWriter();">
-            <input name="question" class="input" type="text" placeholder="Type your question here..." />
+        <form method="POST" action="/ask" class="form">
+            <input name="question" class="input" type="text" placeholder="Type your question here..."  />
         </form>
 
+       
+
+       <% for (const message of messages) { %>
+          <article class="<%= message.type %>">
+            <p><%= message.text %></p>
+          </article>
+        <% } %>
+
     </div>
-    <script>
+    <!-- <script>
 var i = 0;
 var txt = 'Svaret på dit spørgsmål kommer her.';
 var speed = 50;
@@ -57,6 +65,6 @@ setTimeout(answer, 2000);
   }
 }
 
-</script>
+</script> -->
   </body>
 </html>
