@@ -40,16 +40,22 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (request, response) => {
-  response.render("index", { messages });
+  response.render("index", { messages, error: "" });
 });
 
 app.post("/ask", (request, response) => {
-  const question = request.body.question;
+  const question = request.body.question.trim();
+  let error = "";
 
+  if (!question) {
+    error = "Skriv et spørgsmål, før du sender.";
+  } else {
+    messages.push({ type: "question", text: question });
     const answer = findAnswer(question);
     messages.push({ type: "answer", text: answer });
+  }
 
-  response.render("index", { messages });
+  response.render("index", { messages, error });
 });
 
 
