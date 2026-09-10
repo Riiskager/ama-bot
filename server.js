@@ -7,17 +7,27 @@ const messages = [];
 const answers = [
   {
     keywords: ["navn", "hedder", "hvem er du"],
-    answer: "Jeg hedder Riisager, a.ka Riiskager, Riisklump, Riis a' la mandem. Hva' så der mayn?"
+    answer: ["Jeg hedder Riisager, a.ka Riiskager, Riisklump, Riis a' la mandem. Hva' så der mayn?",
+        "Bare kald mig Riisager"
+    ]
   },
   {
     keywords: ["bor", "by", "fra"],
-    answer: "Jeg bor i Aarhus."
+    answer: ["Jeg bor i Aarhus.",
+        "8210, son!"
+    ]
   },
   {
     keywords: ["fritid", "hobby", "kan lide"],
-    answer: "I min fritid kan jeg godt lide at Spille og lave musik."
+    answer: ["I min fritid kan jeg godt lide at Spille og lave musik."]
   }
 ];
+
+function sanitizeQuestion(input) {
+  return input.replace(/[\u0000-\u001F\u007F]/g, "");
+}
+
+
 function findAnswer(question) {
   const normalizedQuestion = question.toLowerCase();
 
@@ -44,16 +54,21 @@ app.get("/", (request, response) => {
 });
 
 app.post("/ask", (request, response) => {
-  const question = request.body.question.trim();
+    const rawQuestion = request.body.question;
+    const question = sanitizeQuestion(rawQuestion).trim();
+ 
   let error = "";
 
   if (!question) {
     error = "Skriv et spørgsmål, før du sender.";
+    } else if (question.length > 280) {
+  error = "Spørgsmålet må højst være 280 tegn.";
   } else {
     messages.push({ type: "question", text: question });
     const answer = findAnswer(question);
     messages.push({ type: "answer", text: answer });
   }
+  
 
   response.render("index", { messages, error });
 });
