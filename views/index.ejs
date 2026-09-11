@@ -10,7 +10,7 @@
             <img id="image" src="/img/ask.png" alt="ask" />
         </section>
         <aside class="cirkel"></aside>
-        <aside class="cirkel1"></aside>
+        <!-- <aside class="cirkel1"></aside> -->
         <aside class="cirkel2"></aside>
         <aside class="info">
             <h1>Ask Me Anything</h1>
@@ -22,16 +22,21 @@
         <form method="POST" action="/ask" class="form">
             <input name="question" class="input" type="text" placeholder="Type your question here..."  />
         </form>
+        <form class="reset" method="POST" action="/clear-messages">
+            <button type="submit"></button>
+        </form>
 
       <% if (error) { %>
           <p role="alert" class="error"><%= error %></p>
       <% } %>
-
+        <section class="messages">
        <% for (const message of messages) { %>
           <article class="<%= message.type %>">
             <p><%= message.text %></p>
+            <!-- <small><%= message.createdAt.toLocaleTimeString() %></small> -->
           </article>
         <% } %>
+      </section>
 
     </div>
     <!-- <script>

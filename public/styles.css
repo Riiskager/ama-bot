@@ -41,7 +41,7 @@ body{
     position: absolute;
     right: 20vw;
     margin: 5rem;
-    bottom: 5rem;
+    bottom: 1rem;
     
 }
 .input{
@@ -60,28 +60,52 @@ body{
     font-size: 1.2rem;
 }
 
+.messages {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-height: 47vh;
+  overflow-y: auto;
+  width: 30vw;
+  position: absolute;
+  right: 26.2vw;
+  top: 9.5rem;
+}
+
 .answer{
+    align-self: flex-start;
     z-index: 10;
-    position: absolute;
-    padding: 1rem;
-    min-height: 4rem;
-    width: 30vw;
-    background-color: #eaff008f;
+    padding: 5px;
+    min-height: fit-content;
+    width: fit-content;
+    background-color: #eaff00c4;
     border-radius:  2rem 2rem 2rem 0;
     right: 43vw;
     top: 10rem;
     color:  #b92a95;
-    font-size: 1.2rem;
+   
+}
+.question{
+    align-self: flex-end;
+    z-index: 10;
+    padding: 5px;
+    min-height: fit-content;
+    width: fit-content;
+    background-color: #00d0ff;
+    border-radius:  2rem 2rem 0 2rem;
+    color:  #ffffff;
+ 
 }
 
+
 .error{
-    z-index: 10;
+    z-index: 20;
     position: absolute;
     padding: 1rem;
     min-height: 4rem;
     width: 30vw;
-    background-color: #ff40009a;
-    border: 2px solid #ff0000;
+    background-color: #ff4000;
+    border: 2px solid #ac0000;
     border-radius:  2rem 2rem 2rem 0;
     right: 43vw;
     top: 10rem;
@@ -89,18 +113,22 @@ body{
     font-size: 1.2rem;
 }
 
-.question{
-    z-index: 10;
+.reset button{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    background-color: #f3eb0777;
+    border: none;
     position: absolute;
-    padding: 1rem;
-    min-height: 4rem;
-    width: 30vw;
-    background-color: #00d0ff;
-    border-radius:  2rem 2rem 0 2rem;
-    right: 2vw;
-    top: 14rem;
-    color:  #ffffff;
-    font-size: 1.2rem;
+    right: 1rem;
+    bottom: 10rem;
+    z-index: 1;
+    
+}
+.reset button:hover{
+    background-color: #f3eb07c1;
+    cursor: pointer;
+    border: 5px solid #e79a00;
 }
 
 .cirkel{
@@ -114,7 +142,7 @@ body{
     
 }
 
-.cirkel1{
+/* .cirkel1{
     width: 20rem;
     height: 20rem;
     border-radius: 50%;
@@ -123,7 +151,7 @@ body{
     right: 1rem;
     bottom: 10rem;
     
-}
+} */
 .cirkel2{
     width: 20rem;
     height: 20rem;
