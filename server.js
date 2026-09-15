@@ -1,31 +1,12 @@
 import express from "express";
-
+import {answers} from "./data/answers.js";
 //sætter app, port og message array
 const app = express();
 const port = 3300;
 const messages = [];
 
 // ===============Array med keywords og svar==========//
-const answers = [
-  {
-    keywords: ["navn", "hedder", "hvem er du"],
-    answers: ["Jeg hedder Riisager, a.ka Riiskager, Riisklump, Riis a' la mandem. Hva' så der mayn?",
-        "Bare kald mig Riisager"
-    ]
-  },
-  {
-    keywords: ["bor", "by", "fra"],
-    answers: ["Jeg bor i Aarhus.",
-        "8210, son!"
-    ]
-  },
-  {
-    keywords: ["fritid", "hobby", "kan lide"],
-    answers: ["I min fritid kan jeg godt lide at Spille og lave musik.",
-      "Jeg laver damer, G"
-    ]
-  }
-];
+
 
 
 // Funktion til at fjerne uønskede tegn fra spørgsmålet
@@ -41,20 +22,7 @@ function countMatches(keywords, normalizedQuestion) {
 
   return matches.length;
 }
-console.log(
-  countMatches(["navn", "hedder", "hvem er du"], "hvad hedder du?")
-); // 1
 
-console.log(
-  countMatches(
-    ["navn", "hedder", "hvem er du"],
-    "hvad hedder du, og hvad er dit navn?"
-  )
-); // 2
-
-console.log(
-  countMatches(["navn", "hedder", "hvem er du"], "kan du bage?")
-); // 0
 
 //Funktion der ignorerer store bogstaver og tjekker om spørgsmålet matcher keywords i answers arrayet.
 function findAnswer(question) {
@@ -76,6 +44,7 @@ function findBestAnswer(question) {
   const normalizedQuestion = question.toLowerCase();
   let bestScore = 0;
   let bestAnswer = "Eyo, det står skudta ikke i manus!";
+  let bestCategory = "";
 
   for (const answerGroup of answers) {
     // 1. Beregn denne regels score.
@@ -84,13 +53,24 @@ function findBestAnswer(question) {
     if (score > bestScore){
       // 3. Gem score og svar, hvis reglen er bedre.
       bestScore = score;
-      bestAnswer = answerGroup.answers
-    }
+      const randomAnswer = Math.floor(Math.random() * answerGroup.answers.length);
+      bestCategory = answerGroup.category;
+      bestAnswer = answerGroup.answers[randomAnswer];
+    };
     
-  }
+  };
+  
 
-  return bestAnswer;
+  return{ 
+    category: bestCategory, 
+    answer: bestAnswer };
 }
+
+let topicStats = {
+  navn: 0,
+  bosted: 0,
+  fritid: 0
+};
 
 //=====================Middleware======================//
 
@@ -103,7 +83,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // ==========================Ruter=====================//
 app.get("/", (request, response) => {
-  response.render("index", { messages, error: "" }); //sender messages arrayet og error stringen til index.ejs
+  response.render("index", { messages, error: "", topicStats }); //sender messages arrayet og error stringen til index.ejs
 });
 
 // Route til at håndtere spørgsmål sendt via POST
@@ -114,21 +94,26 @@ app.post("/ask", (request, response) => {
   let error = "";
   //hvis der ikke er et spørgsmål, eller hvis det er for langt
   if (!question) {
-    error = "Skriv et spørgsmål, før du sender.";
+    error = "Tag dig dog sammen og skriv noget";
     } else if (question.length > 280) {
-  error = "Spørgsmålet må højst være 280 tegn.";
+  error = "Eyo, stram det lige ind makker, gider ikke læse en roman.";
   } else { //ellers skub skub svar i messages arrayet
     messages.push({ type: "question", text: question, createdAt: new Date() });;
-    const answer = findAnswer(question); //kalder findAnswer funktionen med spørgsmålet som argument
-    messages.push({ type: "answer", text: answer, createdAt: new Date() }); //skubber svaret ind i messages arrayet
+    const result = findBestAnswer(question); //kalder findBestAnswer funktionen med spørgsmålet som argument
+    messages.push({ type: "answer", text: result.answer, createdAt: new Date() }); //skubber svaret ind i messages arrayet
+    if (result.category) {
+    topicStats[result.category]++; //opdaterer topicStats objektet med den kategori der blev matchet
   }
-  
+  }
 
-  response.render("index", { messages, error }); //sender messages arrayet og error stringen til index.ejs
+  
+  console.log("Topic stats:", topicStats); //logger topicStats objektet i konsollen
+  response.render("index", { messages, error, topicStats }); //sender messages arrayet og error stringen til index.ejs
 });
 //route der tømmer arrayet og redirecter til index.ejs
 app.post("/clear-messages", (request, response) => {
   messages.length = 0;
+  topicStats = { navn: 0, bosted: 0, fritid: 0 };
   response.redirect("/");
 });
 

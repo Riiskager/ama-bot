@@ -37,6 +37,14 @@
           </article>
         <% } %>
       </section>
+      <section class="stats">
+          <ul>
+             <% for (const stat of Object.entries(topicStats)) { %>
+    <li><%= stat[0] %>: <%= stat[1] %></li>
+  <% } %>
+          </ul>
+
+      </section>
 
     </div>
     <!-- <script>

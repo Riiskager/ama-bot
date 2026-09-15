@@ -162,3 +162,24 @@ body{
     bottom: 15rem;
     
 }
+
+.stats{
+    position: absolute;
+    bottom: 0;
+    right: 21rem;
+    margin: 1rem;
+    width: fit-content;
+}
+.stats ul{
+    display: flex;
+    color: whitesmoke;
+}
+
+.stats li{
+    margin: 1rem;
+    list-style: none;
+    border: 2px solid  #07c8f3;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: #07c8f395 ;
+}
