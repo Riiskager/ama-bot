@@ -65,7 +65,7 @@ function findBestAnswer(question) {
     category: bestCategory, 
     answer: bestAnswer };
 }
-
+//let istedet for const, så den kan cleares nemmere
 let topicStats = {
   navn: 0,
   bosted: 0,
