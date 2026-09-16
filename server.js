@@ -1,10 +1,26 @@
 import express from "express";
 import {answers} from "./data/answers.js";
+import fs from "node:fs/promises";
+import { json } from "node:stream/consumers";
 //sætter app, port og message array
 const app = express();
 const port = 3300;
-const messages = [];
+// const messages = [];
 
+//funktion til at loade beskeder fra json
+async function loadMessages() {
+  // TODO: Læs data/messages.json med fs.readFile() ("utf8").
+  const data = await fs.readFile("./data/messages.json", "utf8");
+  // TODO: Parse JSON-teksten til et array, og returnér det.
+  return JSON.parse(data);
+} 
+//Funktion til at gemme beskeder til JSON
+async function saveMessages(messages) {
+  // TODO: Omdan messages til formateret JSON-tekst med JSON.stringify().
+  const json = JSON.stringify(messages, null, 2)
+  // TODO: Skriv teksten til data/messages.json med fs.writeFile().
+  await fs.writeFile("./data/messages.json", json)
+}
 // ===============Array med keywords og svar==========//
 
 
@@ -65,6 +81,10 @@ function findBestAnswer(question) {
     category: bestCategory, 
     answer: bestAnswer };
 }
+
+
+
+
 //let istedet for const, så den kan cleares nemmere
 let topicStats = {
   navn: 0,
@@ -82,12 +102,15 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: true }));
 
 // ==========================Ruter=====================//
-app.get("/", (request, response) => {
+app.get("/", async (request, response) => {
+  const messages = await loadMessages()
   response.render("index", { messages, error: "", topicStats }); //sender messages arrayet og error stringen til index.ejs
 });
 
 // Route til at håndtere spørgsmål sendt via POST
-app.post("/ask", (request, response) => {
+app.post("/ask", async (request, response) => {
+    const messages = await loadMessages();
+    
     const rawQuestion = request.body.question;
     const question = sanitizeQuestion(rawQuestion).trim();
  
@@ -108,11 +131,12 @@ app.post("/ask", (request, response) => {
 
   
   console.log("Topic stats:", topicStats); //logger topicStats objektet i konsollen
+  await saveMessages(messages)
   response.render("index", { messages, error, topicStats }); //sender messages arrayet og error stringen til index.ejs
 });
 //route der tømmer arrayet og redirecter til index.ejs
-app.post("/clear-messages", (request, response) => {
-  messages.length = 0;
+app.post("/clear-messages", async (request, response) => {
+   await saveMessages([]);
   topicStats = { navn: 0, bosted: 0, fritid: 0 };
   response.redirect("/");
 });
