@@ -1,11 +1,11 @@
 import express from "express";
-import {answers} from "./data/answers.js";
+import {answers} from "./data/answers.json";
 import fs from "node:fs/promises";
 import { json } from "node:stream/consumers";
-//sætter app, port og message array
+//sætter app, port 
 const app = express();
 const port = 3300;
-// const messages = [];
+// const messages = []; - Tidligere opgave
 
 //funktion til at loade beskeder fra json
 async function loadMessages() {
@@ -93,55 +93,51 @@ let topicStats = {
 };
 
 //=====================Middleware======================//
+app.use(express.json());
 
-// Middleware til at håndtere statiske filer og form data
-app.use(express.static("public"));
-// Sætter EJS som view engine
-app.set("view engine", "ejs");
-// Middleware til at parse URL-encoded form data
-app.use(express.urlencoded({ extended: true }));
+
 
 // ==========================Ruter=====================//
-app.get("/", async (request, response) => {
-  const messages = await loadMessages()
-  response.render("index", { messages, error: "", topicStats }); //sender messages arrayet og error stringen til index.ejs
+app.get("/messages", async (request, response) => {
+  const messages = await loadMessages();
+
+  response.json(messages);
 });
 
-// Route til at håndtere spørgsmål sendt via POST
-app.post("/ask", async (request, response) => {
-    const messages = await loadMessages();
-    
-    const rawQuestion = request.body.question;
-    const question = sanitizeQuestion(rawQuestion).trim();
- 
-  let error = "";
-  //hvis der ikke er et spørgsmål, eller hvis det er for langt
-  if (!question) {
-    error = "Tag dig dog sammen og skriv noget";
-    } else if (question.length > 280) {
-  error = "Eyo, stram det lige ind makker, gider ikke læse en roman.";
-  } else { //ellers skub skub svar i messages arrayet
-    messages.push({ type: "question", text: question, createdAt: new Date() });;
-    const result = findBestAnswer(question); //kalder findBestAnswer funktionen med spørgsmålet som argument
-    messages.push({ type: "answer", text: result.answer, createdAt: new Date() }); //skubber svaret ind i messages arrayet
-    if (result.category) {
-    topicStats[result.category]++; //opdaterer topicStats objektet med den kategori der blev matchet
+app.post("/messages", async (request, response) => {
+  const messages = await loadMessages();
+  const question = request.body.question.trim();
+
+  // TODO: Hvis question er tom, send fejlen som JSON i stedet for at rendere index igen,
+  if (!question){
+    response.json({error: "yo, skriv noget forhelvede"});
+    return;
   }
-  }
+ // TODO: Opret en spørgsmål-besked, { type: "question", text: question, createdAt: new Date().toISOString() }, og tilføj den til messages.
+ const message = {
+    type: "question",
+    text: question,
+    createedAt: new Date().toISOString()
+ }
+messages.push(message);
+
+  const result = findBestAnswer(question);
+  const answerMessage = { type: "answer", text: result.answer, createdAt: new Date().toISOString() };
+  messages.push(answerMessage);
+
+
+
+await saveMessages(messages)
 
   
-  console.log("Topic stats:", topicStats); //logger topicStats objektet i konsollen
-  await saveMessages(messages)
-  response.render("index", { messages, error, topicStats }); //sender messages arrayet og error stringen til index.ejs
-});
-//route der tømmer arrayet og redirecter til index.ejs
-app.post("/clear-messages", async (request, response) => {
-   await saveMessages([]);
-  topicStats = { navn: 0, bosted: 0, fritid: 0 };
-  response.redirect("/");
+ response.json({question: message, answer: answerMessage})
 });
 
+app.delete("/messages", async (request, response) => {
+  await saveMessages([]);
 
+  response.send();
+});
 
 app.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
