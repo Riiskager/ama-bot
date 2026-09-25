@@ -1,6 +1,10 @@
 import express from "express";
 import fs from "node:fs/promises";
-
+import { saveMessages } from "./data/messages.js";
+import { loadMessages } from "./data/messages.js";
+import { loadAnswers } from "./data/answers.js";
+import { saveAnswers } from "./data/answers.js";
+import { findBestAnswer} from "./data/messages.js";
 import svar from "./data/answers.json" with {type: "json"};
 
 //sætter app, port 
@@ -8,35 +12,8 @@ const app = express();
 const port = 3300;
 
 
-//funktion til at loade beskeder fra json
-async function loadMessages() {
-  // TODO: Læs data/messages.json med fs.readFile() ("utf8").
-  const data = await fs.readFile("./data/messages.json", "utf8");
-  // TODO: Parse JSON-teksten til et array, og returnér det.
-  return JSON.parse(data);
-} 
-//Funktion til at gemme beskeder til JSON
-async function saveMessages(messages) {
-  // TODO: Omdan messages til formateret JSON-tekst med JSON.stringify().
-  const json = JSON.stringify(messages, null, 2)
-  // TODO: Skriv teksten til data/messages.json med fs.writeFile().
-  await fs.writeFile("./data/messages.json", json)
-}
-
-async function loadAnswers() {
-  // TODO: Læs data/answers.json med fs.readFile() ("utf8").
-  const data = await fs.readFile("./data/answers.json", "utf8");
-  // TODO: Parse JSON-teksten til et array, og returnér det.
-  return JSON.parse(data)
-}
 
 
-async function saveAnswers(answers) {
-  // TODO: Omdan answers til formateret JSON-tekst med JSON.stringify().
-  const json = JSON.stringify(answers, null, 2)
-  // TODO: Skriv teksten til data/answers.json med fs.writeFile().
-  await fs.writeFile("./data/answers.json", json)
-}
 // ===============Array med keywords og svar==========//
 
 
@@ -72,32 +49,6 @@ function countMatches(keywords, normalizedQuestion) {
 //   return "Det kender jeg ikke svaret på endnu.";
 // }
 
-function findBestAnswer(question, answers) {
-
-  const normalizedQuestion = question.toLowerCase();
-  let bestScore = 0;
-  let bestAnswer = "Eyo, det står skudta ikke i manus!";
-  let bestCategory = "";
-  
-  for (const answerGroup of answers) {
-    // 1. Beregn denne regels score.
-    const score = countMatches(answerGroup.keywords, normalizedQuestion)
-    // 2. Sammenlign med bestScore.
-    if (score > bestScore){
-      // 3. Gem score og svar, hvis reglen er bedre.
-      bestScore = score;
-      const randomAnswer = Math.floor(Math.random() * answerGroup.answers.length);
-      bestCategory = answerGroup.category;
-      bestAnswer = answerGroup.answers[randomAnswer];
-    };
-    
-  };
-  
-
-  return{ 
-    category: bestCategory, 
-    answer: bestAnswer };
-}
 
 
 
@@ -137,6 +88,7 @@ app.post("/messages", async (request, response) => {
     createdAt: new Date().toISOString()
  }
 messages.push(message);
+
 const answers = await loadAnswers();
   const result = findBestAnswer(question, answers);
   const answerMessage = { type: "answer", text: result.answer, createdAt: new Date().toISOString() };

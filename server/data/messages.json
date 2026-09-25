@@ -2,151 +2,51 @@
   {
     "type": "question",
     "text": "mad",
-    "createdAt": "2026-09-25T08:48:24.692Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-25T08:48:24.694Z"
-  },
-  {
-    "type": "question",
-    "text": "bedste ven",
-    "createdAt": "2026-09-25T08:50:52.375Z"
-  },
-  {
-    "type": "answer",
-    "text": "Eyo, det står skudta ikke i manus!",
-    "createdAt": "2026-09-25T08:50:52.376Z"
-  },
-  {
-    "type": "question",
-    "text": "bedste ven",
-    "createdAt": "2026-09-25T08:51:28.167Z"
-  },
-  {
-    "type": "answer",
-    "text": "Eyo, det står skudta ikke i manus!",
-    "createdAt": "2026-09-25T08:51:28.168Z"
-  },
-  {
-    "type": "question",
-    "text": "Bedste ven",
-    "createdAt": "2026-09-25T08:52:32.821Z"
-  },
-  {
-    "type": "answer",
-    "text": "Eyo, det står skudta ikke i manus!",
-    "createdAt": "2026-09-25T08:52:32.823Z"
-  },
-  {
-    "type": "question",
-    "text": "ven",
-    "createdAt": "2026-09-25T08:52:37.878Z"
-  },
-  {
-    "type": "answer",
-    "text": "Eyo, det står skudta ikke i manus!",
-    "createdAt": "2026-09-25T08:52:37.879Z"
-  },
-  {
-    "type": "question",
-    "text": "makker",
-    "createdAt": "2026-09-25T08:52:54.898Z"
-  },
-  {
-    "type": "answer",
-    "text": "Riiskage og Rutter 4lyfe",
-    "createdAt": "2026-09-25T08:52:54.898Z"
-  },
-  {
-    "type": "question",
-    "text": "ven",
-    "createdAt": "2026-09-25T08:53:12.772Z"
-  },
-  {
-    "type": "answer",
-    "text": "Riiskage og Rutter 4lyfe",
-    "createdAt": "2026-09-25T08:53:12.773Z"
-  },
-  {
-    "type": "question",
-    "text": "ven",
-    "createdAt": "2026-09-25T08:53:16.130Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min bedste ven er Matthias",
-    "createdAt": "2026-09-25T08:53:16.131Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T09:04:35.853Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-25T09:04:35.854Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T09:04:39.358Z"
+    "createdAt": "2026-09-25T10:29:28.895Z"
   },
   {
     "type": "answer",
     "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-25T09:04:39.359Z"
+    "createdAt": "2026-09-25T10:29:28.896Z"
   },
   {
     "type": "question",
-    "text": "lasagne",
-    "createdAt": "2026-09-25T09:04:50.919Z"
+    "text": "mad",
+    "createdAt": "2026-09-25T10:29:29.864Z"
+  },
+  {
+    "type": "answer",
+    "text": "Lasagne, specifikt min moders",
+    "createdAt": "2026-09-25T10:29:29.865Z"
+  },
+  {
+    "type": "question",
+    "text": "mad",
+    "createdAt": "2026-09-25T10:29:30.497Z"
   },
   {
     "type": "answer",
     "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-25T09:04:50.920Z"
+    "createdAt": "2026-09-25T10:29:30.499Z"
   },
   {
     "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T09:10:37.408Z"
+    "text": "fritid",
+    "createdAt": "2026-09-25T10:29:35.464Z"
   },
   {
     "type": "answer",
-    "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-25T09:10:37.408Z"
+    "text": "Jeg kan godt lide at spille guitar",
+    "createdAt": "2026-09-25T10:29:35.465Z"
   },
   {
     "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T09:10:39.933Z"
+    "text": "friid",
+    "createdAt": "2026-09-25T10:29:38.866Z"
   },
   {
     "type": "answer",
-    "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-25T09:10:39.933Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T09:10:40.772Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-25T09:10:40.772Z"
-  },
-  {
-    "type": "question",
-    "text": "lasagne",
-    "createdAt": "2026-09-25T09:10:46.250Z"
-  },
-  {
-    "type": "answer",
-    "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-25T09:10:46.251Z"
+    "text": "Eyo, det står skudta ikke i manus!",
+    "createdAt": "2026-09-25T10:29:38.869Z"
   }
 ]
