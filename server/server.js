@@ -1,11 +1,12 @@
 import express from "express";
-import {answers} from "./data/answers.json";
 import fs from "node:fs/promises";
-import { json } from "node:stream/consumers";
+
+import svar from "./data/answers.json" with {type: "json"};
+
 //sætter app, port 
 const app = express();
 const port = 3300;
-// const messages = []; - Tidligere opgave
+
 
 //funktion til at loade beskeder fra json
 async function loadMessages() {
@@ -20,6 +21,21 @@ async function saveMessages(messages) {
   const json = JSON.stringify(messages, null, 2)
   // TODO: Skriv teksten til data/messages.json med fs.writeFile().
   await fs.writeFile("./data/messages.json", json)
+}
+
+async function loadAnswers() {
+  // TODO: Læs data/answers.json med fs.readFile() ("utf8").
+  const data = await fs.readFile("./data/answers.json", "utf8");
+  // TODO: Parse JSON-teksten til et array, og returnér det.
+  return JSON.parse(data)
+}
+
+
+async function saveAnswers(answers) {
+  // TODO: Omdan answers til formateret JSON-tekst med JSON.stringify().
+  const json = JSON.stringify(answers, null, 2)
+  // TODO: Skriv teksten til data/answers.json med fs.writeFile().
+  await fs.writeFile("./data/answers.json", json)
 }
 // ===============Array med keywords og svar==========//
 
@@ -41,27 +57,28 @@ function countMatches(keywords, normalizedQuestion) {
 
 
 //Funktion der ignorerer store bogstaver og tjekker om spørgsmålet matcher keywords i answers arrayet.
-function findAnswer(question) {
-  const normalizedQuestion = question.toLowerCase();
+// function findAnswer(question) {
+//   const normalizedQuestion = question.toLowerCase();
   
-  for (const answerGroup of answers) {
-    const hasMatch = answerGroup.keywords.some((keyword) => normalizedQuestion.includes(keyword));
+//   for (const answerGroup of answers) {
+//     const hasMatch = answerGroup.keywords.some((keyword) => normalizedQuestion.includes(keyword));
 
-    if (hasMatch) {
-      const randomIndex = Math.floor(Math.random() * answerGroup.answers.length);
-      return answerGroup.answers[randomIndex];
-    }
-  }
+//     if (hasMatch) {
+//       const randomIndex = Math.floor(Math.random() * answerGroup.answers.length);
+//       return answerGroup.answers[randomIndex];
+//     }
+//   }
 
-  return "Det kender jeg ikke svaret på endnu.";
-}
+//   return "Det kender jeg ikke svaret på endnu.";
+// }
 
-function findBestAnswer(question) {
+function findBestAnswer(question, answers) {
+
   const normalizedQuestion = question.toLowerCase();
   let bestScore = 0;
   let bestAnswer = "Eyo, det står skudta ikke i manus!";
   let bestCategory = "";
-
+  
   for (const answerGroup of answers) {
     // 1. Beregn denne regels score.
     const score = countMatches(answerGroup.keywords, normalizedQuestion)
@@ -117,11 +134,11 @@ app.post("/messages", async (request, response) => {
  const message = {
     type: "question",
     text: question,
-    createedAt: new Date().toISOString()
+    createdAt: new Date().toISOString()
  }
 messages.push(message);
-
-  const result = findBestAnswer(question);
+const answers = await loadAnswers();
+  const result = findBestAnswer(question, answers);
   const answerMessage = { type: "answer", text: result.answer, createdAt: new Date().toISOString() };
   messages.push(answerMessage);
 
@@ -137,6 +154,39 @@ app.delete("/messages", async (request, response) => {
   await saveMessages([]);
 
   response.send();
+});
+
+app.get("/answers", async (request, response) => {
+  const answers = await loadAnswers();
+
+  response.json(answers);
+});
+
+app.get("/answers/:category", async (request, response) => {
+  const answers = await loadAnswers();
+
+  // TODO: Find reglen i answers, hvor category matcher request.params.category.
+  // Denne gang skal du IKKE bruge Number() — begge sider er allerede strings.
+ const answerRule = answers.find(a => a.category === request.params.category)
+
+  // TODO: Send den fundne regel som JSON.
+  response.json(answerRule)
+});
+
+app.post("/answers", async (request, response) => {
+  const answers = await loadAnswers();
+
+  // TODO: Opret et nyt regel-objekt ud fra request.body.category, request.body.keywords og request.body.answer.
+const newRule = {
+  "category": request.body.category,
+  "keywords": request.body.keywords,
+  "answer": request.body.answer
+}
+  // TODO: Tilføj den til answers med push(), og gem den opdaterede liste med saveAnswers(answers).
+  answers.push(newRule)
+  await saveAnswers(answers)
+  // TODO: Send den nye regel som JSON.
+  response.json(newRule)
 });
 
 app.listen(port, () => {
