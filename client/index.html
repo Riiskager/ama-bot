@@ -2,12 +2,13 @@
 <html lang="en">
   <head>
     <title>Ama-bot</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <div id="root">
         <section class="me">
-            <img id="image" src="/img/ask.png" alt="ask" />
+            <img id="image" src="./img/ask.png" alt="ask" />
         </section>
         <aside class="cirkel"></aside>
         <!-- <aside class="cirkel1"></aside> -->
@@ -19,29 +20,21 @@
         <section id="demo" class="svar">
             <p></p>
         </section>
-        <form method="POST" action="/ask" class="form">
-            <input name="question" class="input" type="text" placeholder="Type your question here..."  />
+        <form  id="form" class="form">
+            <input id="question" name="question" class="input" type="text" placeholder="Type your question here..."  />
         </form>
         <form class="reset" method="POST" action="/clear-messages">
-            <button type="submit"></button>
+            <button id="clear" type="submit"></button>
         </form>
 
-      <% if (error) { %>
-          <p role="alert" class="error"><%= error %></p>
-      <% } %>
-        <section class="messages">
-       <% for (const message of messages) { %>
-          <article class="<%= message.type %>">
-            <p><%= message.text %></p>
-          
-          </article>
-        <% } %>
+    
+        <section id="messages" class="messages">
+       
       </section>
+      
       <section class="stats">
           <ul>
-             <% for (const stat of Object.entries(topicStats)) { %>
-    <li><%= stat[0] %>: <%= stat[1] %></li>
-  <% } %>
+            
           </ul>
 
       </section>

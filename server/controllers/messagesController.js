@@ -1,7 +1,6 @@
-import express from "express"
-import { loadMessages, saveMessages } from "../server/data/messages.js";
-import { loadAnswers } from "../server/data/answers.js";
-import { findBestAnswer} from "../server/data/messages.js";
+import express from "express";
+import { loadMessages, saveMessages, findBestAnswer } from "../data/messages.js";
+import { loadAnswers } from "../data/answers.js";
 
 const router = express.Router();
 

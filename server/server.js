@@ -1,9 +1,10 @@
 import express from "express";
 
-import { loadAnswers } from "./data/answers.js";
-import { saveAnswers } from "./data/answers.js";
-import messageRouter from "../controllers/messagesController.js"
-import answerRouter from "../controllers/answersController.js"
+
+import messageRouter from "./controllers/messagesController.js"
+import answerRouter from "./controllers/answersController.js"
+import cors from "cors";
+
 
 
 
@@ -37,7 +38,7 @@ let topicStats = {
 
 //=====================Middleware======================//
 app.use(express.json());
-
+app.use(cors());
 app.use("/messages", messageRouter)
 app.use("/aswers", answerRouter)
 
