@@ -180,13 +180,37 @@ app.post("/answers", async (request, response) => {
 const newRule = {
   "category": request.body.category,
   "keywords": request.body.keywords,
-  "answer": request.body.answer
+  "answers": request.body.answers
 }
   // TODO: Tilføj den til answers med push(), og gem den opdaterede liste med saveAnswers(answers).
   answers.push(newRule)
   await saveAnswers(answers)
   // TODO: Send den nye regel som JSON.
   response.json(newRule)
+});
+
+app.put("/answers/:category", async (request, response) => {
+  const answers = await loadAnswers();
+  const answerRule = answers.find((a) => a.category === request.params.category);
+
+  // TODO: Opdater answerRule.keywords og answerRule.answer med værdierne fra request.body.
+      answerRule.keywords = request.body.keywords
+      answerRule.answers = request.body.answers
+  // TODO: Gem den opdaterede liste med saveAnswers(answers), og send answerRule som JSON.
+  await saveAnswers(answers)
+  response.json(answerRule);
+});
+
+app.delete("/answers/:category", async (request, response) => {
+  const answers = await loadAnswers();
+
+  // TODO: Fjern reglen fra answers, hvor category matcher request.params.category, med filter().
+  const updatedAnswers = answers.filter(a => a.category !== request.params.category)
+
+
+  // TODO: Gem den opdaterede liste med saveAnswers().
+  await saveAnswers(updatedAnswers)
+  response.send();
 });
 
 

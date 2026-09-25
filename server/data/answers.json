@@ -1,23 +1,15 @@
 [
   {
-    "category": "mad",
-    "keywords": [
-      "mad",
-      "spise",
-      "livret"
-    ],
-    "answers": ["Min livret er lasagne.",
-  "Lasagne, specifikt min mors"]
-  },
-  {
     "category": "navn",
     "keywords": [
       "navn",
       "hedder",
       "kalde"
     ],
-    "answers": ["Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-  "Bare kald mig Riisager"]
+    "answers": [
+      "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
+      "Bare kald mig Riisager"
+    ]
   },
   {
     "category": "bosted",
@@ -26,8 +18,10 @@
       "by",
       "hvor er du fra"
     ],
-    "answers": ["8210 son!",
-                "Jeg bor I Hasle"]
+    "answers": [
+      "8210 son!",
+      "Jeg bor I Hasle"
+    ]
   },
   {
     "category": "fritid",
@@ -36,8 +30,10 @@
       "hobby",
       "hvad laver du"
     ],
-    "answers": ["jeg laver damer G'!",
-    "Jeg kan godt lide at spille guitar"]
+    "answers": [
+      "jeg laver damer G'!",
+      "Jeg kan godt lide at spille guitar"
+    ]
   },
   {
     "category": "bedstVen",
@@ -49,6 +45,19 @@
     "answers": [
       "Riiskage og Rutter 4lyfe",
       "Min bedste ven er Matthias"
+    ]
+  },
+  {
+    "category": "mad",
+    "keywords": [
+      "mad",
+      "spise",
+      "livret",
+      "lasagne"
+    ],
+    "answers": [
+      "Min livret er lasagne.",
+      "Lasagne, specifikt min moders"
     ]
   }
 ]
