@@ -12,9 +12,14 @@ console.log(messagesContainer, questionForm, questionInput, clearMessagesButton)
 async function getMessages() {
   // TODO: Hent `${API_URL}/messages` med fetch(), og await response.json() for at få messages-arrayet.
   const response = await fetch(`${API_URL}/messages`)
-  const message = await response.json(message)
-  // TODO: Log messages til konsollen med console.log(messages) — se, hvordan dataen faktisk ser ud, før du render'er den.
-  console.log(message)
+  const messages = await response.json();
+
+  // TODO: Kør igennem messages med en for...of, 
+  // og kald displayMessage(message) for hver. Fjern console.log igen.
+  for (const message of messages){
+    displayMessage(message)
+  }
+
 }
 
 getMessages();
@@ -34,3 +39,23 @@ messagesContainer.insertAdjacentHTML("beforeend", html)
 
 }
 displayMessage({ type: "question", text: "Test" })
+
+questionForm.addEventListener("submit", async (event) =>{
+  event.preventDefault();
+  const question = questionInput.value.trim();
+  
+  // TODO: Send et POST-kald til `${API_URL}/messages` med fetch(). Husk:
+  //   - method: "POST"
+  //   - headers: { "Content-Type": "application/json" }
+  //   - body: JSON.stringify({ question })
+  const response = await fetch (`${API_URL}/messages`, {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ question })
+})
+
+  // TODO: await response.json() for at få { question, answer } tilbage, og log det med console.log(data).
+const data = await response.json()
+console.log(data)
+
+});

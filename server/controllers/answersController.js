@@ -1,5 +1,5 @@
 import express from "express"
-import { loadAnswers, saveAnswers } from "../server/data/answers.js";
+import { loadAnswers, saveAnswers } from "../data/answers.js";
 
 
 const router = express.Router();
