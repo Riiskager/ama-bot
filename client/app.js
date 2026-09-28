@@ -63,5 +63,13 @@ console.log("AFTER FETCH");
   // TODO: await response.json() for at få { question, answer } tilbage, og log det med console.log(data).
 const data = await response.json()
 console.log(data)
+
+
+  displayMessage(data.question);
+  displayMessage(data.answer);
 console.log("HANDLER ER HELT FÆRDIG");
+
+questionInput.value="";
 });
+
+
