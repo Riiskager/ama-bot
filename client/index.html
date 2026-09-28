@@ -2,46 +2,39 @@
 <html lang="en">
   <head>
     <title>Ama-bot</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="app.js" defer></script>
   </head>
   <body>
     <div id="root">
         <section class="me">
-            <img id="image" src="/img/ask.png" alt="ask" />
+            <img id="image" src="./img/ask.png" alt="ask" />
         </section>
         <aside class="cirkel"></aside>
         <!-- <aside class="cirkel1"></aside> -->
         <aside class="cirkel2"></aside>
         <aside class="info">
-            <h1>Ask Me Anything</h1>
+            <h1>Spørg Mig om ting</h1>
             <!-- <p>Welcome to the AMA bot! Feel free to ask any questions you have, and I'll do my best to provide helpful answers.</p> -->
         </aside>
         <section id="demo" class="svar">
             <p></p>
         </section>
-        <form method="POST" action="/ask" class="form">
-            <input name="question" class="input" type="text" placeholder="Type your question here..."  />
+        <form  id="form" class="form">
+            <input id="question" name="question" class="input" type="text" placeholder="Skriv noget her..."  />
         </form>
-        <form class="reset" method="POST" action="/clear-messages">
-            <button type="submit"></button>
-        </form>
+        <section class="reset">
+            <button class="reset" id="clear" type="button"></button>
+        </section>
 
-      <% if (error) { %>
-          <p role="alert" class="error"><%= error %></p>
-      <% } %>
-        <section class="messages">
-       <% for (const message of messages) { %>
-          <article class="<%= message.type %>">
-            <p><%= message.text %></p>
-            <!-- <small><%= message.createdAt.toLocaleTimeString() %></small> -->
-          </article>
-        <% } %>
+    
+        <section id="messages" class="messages">
+       
       </section>
+      
       <section class="stats">
           <ul>
-             <% for (const stat of Object.entries(topicStats)) { %>
-    <li><%= stat[0] %>: <%= stat[1] %></li>
-  <% } %>
+            
           </ul>
 
       </section>
@@ -81,5 +74,6 @@ setTimeout(answer, 2000);
 }
 
 </script> -->
+
   </body>
 </html>
