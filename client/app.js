@@ -9,6 +9,44 @@ const clearMessagesButton = document.querySelector("#clear");
 
 console.log(messagesContainer, questionForm, questionInput, clearMessagesButton)
 
+
+//==============Typewriter dims======================//
+
+
+ var i = 0;
+
+
+function typeWriter(text) {
+  if (i < text.length) {
+
+    document.getElementsByClassName("svar")[0].style.display = "block";
+    document.getElementById("demo").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(() => typeWriter(text), 50);
+   
+    document.getElementById("image").src='./img/answer1.PNG';
+
+ 
+}else if(i === text.length){
+    document.getElementById("image").src='./img/answerdone.png';
+
+    setTimeout(reset, 2000);  
+ function reset() {
+    if (i >= text.length) {
+      document.getElementById("image").src='./img/ask.png';
+      document.getElementById("demo").innerHTML = "Stil mig et nyt spørgsmål!";
+      i = 0;
+      setTimeout(fuck, 1000)
+    } 
+    function fuck(){
+      document.getElementById("demo").innerHTML = "";
+      document.getElementsByClassName("svar")[0].style.display = "none";
+    }
+  }
+}
+}
+
+
 async function getMessages() {
   // TODO: Hent `${API_URL}/messages` med fetch(), og await response.json() for at få messages-arrayet.
   const response = await fetch(`${API_URL}/messages`)
@@ -45,6 +83,7 @@ questionForm.addEventListener("submit", async (event) =>{
   console.log("SUBMIT EVENT");
   event.preventDefault();
 
+
    console.log("AFTER PREVENT DEFAULT");
   const question = questionInput.value.trim();
   
@@ -64,12 +103,12 @@ console.log("AFTER FETCH");
   // TODO: await response.json() for at få { question, answer } tilbage, og log det med console.log(data).
 const data = await response.json()
 console.log(data)
-
+console.log(data)
 
   displayMessage(data.question);
   displayMessage(data.answer);
 console.log("HANDLER ER HELT FÆRDIG");
-
+  typeWriter(data.answer.text);
 questionInput.value="";
 });
 
@@ -81,4 +120,6 @@ clearMessagesButton.addEventListener("click", async (event) => {
 messagesContainer.innerHTML="";
 
 console.log(response)
-})
+});
+
+

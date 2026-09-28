@@ -183,3 +183,15 @@ body{
     border-radius: 1rem;
     background-color: #07c8f395 ;
 }
+
+.svar{
+    display: none;
+    position: absolute;
+    min-width: fit-content;
+    left: 20rem;
+    top: 8rem;
+    background-color: #00d0ff;
+    z-index: 200;
+    padding: 2rem;
+    border-radius: 2rem 2rem 2rem 0;
+}
