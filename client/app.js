@@ -36,9 +36,10 @@ function displayMessage(message) {
 // TODO: Indsæt HTML-strengen sidst i messagesContainer 
 // med messagesContainer.insertAdjacentHTML("beforeend", html). Fjern console.log igen.
 messagesContainer.insertAdjacentHTML("beforeend", html)
+messagesContainer.scrollTop = messagesContainer.scrollHeight
 
 }
-displayMessage({ type: "question", text: "Test" })
+
 
 questionForm.addEventListener("submit", async (event) =>{
   console.log("SUBMIT EVENT");
@@ -73,3 +74,11 @@ questionInput.value="";
 });
 
 
+clearMessagesButton.addEventListener("click", async (event) => { 
+   const response = await fetch (`${API_URL}/messages`, {
+  method: "DELETE",
+})
+messagesContainer.innerHTML="";
+
+console.log(response)
+})

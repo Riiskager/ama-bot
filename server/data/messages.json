@@ -1,692 +1,92 @@
 [
   {
     "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T10:29:28.895Z"
-  },
-  {
-    "type": "answer",
-    "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-25T10:29:28.896Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T10:29:29.864Z"
-  },
-  {
-    "type": "answer",
-    "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-25T10:29:29.865Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-25T10:29:30.497Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-25T10:29:30.499Z"
-  },
-  {
-    "type": "question",
-    "text": "fritid",
-    "createdAt": "2026-09-25T10:29:35.464Z"
-  },
-  {
-    "type": "answer",
-    "text": "Jeg kan godt lide at spille guitar",
-    "createdAt": "2026-09-25T10:29:35.465Z"
-  },
-  {
-    "type": "question",
-    "text": "friid",
-    "createdAt": "2026-09-25T10:29:38.866Z"
-  },
-  {
-    "type": "answer",
-    "text": "Eyo, det står skudta ikke i manus!",
-    "createdAt": "2026-09-25T10:29:38.869Z"
-  },
-  {
-    "type": "question",
-    "text": "friid",
-    "createdAt": "2026-09-25T10:49:52.915Z"
-  },
-  {
-    "type": "answer",
-    "text": "Eyo, det står skudta ikke i manus!",
-    "createdAt": "2026-09-25T10:49:52.916Z"
-  },
-  {
-    "type": "question",
-    "text": "fritid",
-    "createdAt": "2026-09-25T10:49:58.023Z"
-  },
-  {
-    "type": "answer",
-    "text": "Jeg kan godt lide at spille guitar",
-    "createdAt": "2026-09-25T10:49:58.024Z"
-  },
-  {
-    "type": "question",
     "text": "navn",
-    "createdAt": "2026-09-25T12:29:35.183Z"
+    "createdAt": "2026-09-28T09:17:54.330Z"
   },
   {
     "type": "answer",
     "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-25T12:29:35.189Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-25T12:29:47.240Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-25T12:29:47.241Z"
-  },
-  {
-    "type": "question",
-    "text": "fritid",
-    "createdAt": "2026-09-26T15:49:31.867Z"
-  },
-  {
-    "type": "answer",
-    "text": "jeg laver damer G'!",
-    "createdAt": "2026-09-26T15:49:31.886Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T15:50:00.413Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-26T15:50:00.417Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:03:50.763Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-26T16:03:50.766Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:11:15.255Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-26T16:11:15.257Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:21:08.713Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-26T16:21:08.716Z"
-  },
-  {
-    "type": "question",
-    "text": "fritid",
-    "createdAt": "2026-09-26T16:21:24.282Z"
-  },
-  {
-    "type": "answer",
-    "text": "Jeg kan godt lide at spille guitar",
-    "createdAt": "2026-09-26T16:21:24.284Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-26T16:23:57.547Z"
-  },
-  {
-    "type": "answer",
-    "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-26T16:23:57.549Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:26:47.631Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-26T16:26:47.633Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:27:26.719Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-26T16:27:26.720Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:28:14.450Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-26T16:28:14.452Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:41:49.520Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-26T16:41:49.527Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:44:38.815Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-26T16:44:38.822Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-26T16:46:48.431Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-26T16:46:48.433Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:08:18.227Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:08:18.232Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:08:41.743Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:08:41.745Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:14:15.652Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T07:14:15.660Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:16:31.953Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T07:16:31.954Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:16:51.406Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T07:16:51.407Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:18:00.900Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T07:18:00.902Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:23:38.317Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T07:23:38.318Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:26:36.533Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:26:36.534Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:50:12.970Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:50:12.973Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:50:21.547Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:50:21.548Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:51:42.614Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:51:42.614Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:54:06.230Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:54:06.231Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-28T07:54:17.713Z"
-  },
-  {
-    "type": "answer",
-    "text": "Lasagne, specifikt min moders",
-    "createdAt": "2026-09-28T07:54:17.713Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:56:45.944Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:56:45.945Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T07:56:53.308Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T07:56:53.310Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:07.621Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:07.621Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:09.675Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:09.676Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:14.474Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:14.475Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:15.114Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:15.115Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:15.441Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:15.441Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:15.587Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:15.587Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:15.723Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:15.724Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:20.354Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:20.355Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:21.103Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:21.104Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:21.459Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:21.461Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:21.596Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:21.597Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:44.172Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:44.173Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:44.673Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:44.674Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:44.869Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:44.869Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:45.040Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:45.041Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:45.214Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:45.214Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:45.389Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:45.390Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:45.560Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:45.561Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:45.739Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:45.740Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:48.259Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:48.259Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:48.433Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:48.434Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:48.594Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:48.595Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:54.419Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:54.420Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:54.605Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:02:54.606Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:02:55.297Z"
-  },
-  {
-    "type": "answer",
-    "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:02:55.298Z"
-  },
-  {
-    "type": "question",
-    "text": "mad",
-    "createdAt": "2026-09-28T08:03:07.419Z"
-  },
-  {
-    "type": "answer",
-    "text": "Min livret er lasagne.",
-    "createdAt": "2026-09-28T08:03:07.420Z"
-  },
-  {
-    "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:03:54.266Z"
-  },
-  {
-    "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:03:54.266Z"
+    "createdAt": "2026-09-28T09:17:54.330Z"
   },
   {
     "type": "question",
     "text": "banan",
-    "createdAt": "2026-09-28T08:03:58.951Z"
+    "createdAt": "2026-09-28T09:17:56.136Z"
   },
   {
     "type": "answer",
     "text": "Eyo, det står skudta ikke i manus!",
-    "createdAt": "2026-09-28T08:03:58.952Z"
+    "createdAt": "2026-09-28T09:17:56.137Z"
   },
   {
     "type": "question",
     "text": "fritid",
-    "createdAt": "2026-09-28T08:04:06.667Z"
+    "createdAt": "2026-09-28T09:17:58.260Z"
   },
   {
     "type": "answer",
-    "text": "jeg laver damer G'!",
-    "createdAt": "2026-09-28T08:04:06.667Z"
+    "text": "Jeg kan godt lide at spille guitar",
+    "createdAt": "2026-09-28T09:17:58.261Z"
   },
   {
     "type": "question",
     "text": "navn",
-    "createdAt": "2026-09-28T08:10:42.817Z"
+    "createdAt": "2026-09-28T09:17:59.928Z"
+  },
+  {
+    "type": "answer",
+    "text": "Bare kald mig Riisager",
+    "createdAt": "2026-09-28T09:17:59.929Z"
+  },
+  {
+    "type": "question",
+    "text": "navn",
+    "createdAt": "2026-09-28T09:18:00.913Z"
+  },
+  {
+    "type": "answer",
+    "text": "Bare kald mig Riisager",
+    "createdAt": "2026-09-28T09:18:00.914Z"
+  },
+  {
+    "type": "question",
+    "text": "navn",
+    "createdAt": "2026-09-28T09:18:01.922Z"
   },
   {
     "type": "answer",
     "text": "Navnet er Riiskage, Riisenklump A.K.A Riis A'la Mandem, hva så der mayn?",
-    "createdAt": "2026-09-28T08:10:42.817Z"
+    "createdAt": "2026-09-28T09:18:01.923Z"
   },
   {
     "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T08:10:47.749Z"
+    "text": "banan",
+    "createdAt": "2026-09-28T09:18:04.123Z"
   },
   {
     "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T08:10:47.750Z"
+    "text": "Eyo, det står skudta ikke i manus!",
+    "createdAt": "2026-09-28T09:18:04.124Z"
   },
   {
     "type": "question",
-    "text": "navn",
-    "createdAt": "2026-09-28T09:10:15.103Z"
+    "text": "by",
+    "createdAt": "2026-09-28T09:18:11.145Z"
   },
   {
     "type": "answer",
-    "text": "Bare kald mig Riisager",
-    "createdAt": "2026-09-28T09:10:15.103Z"
+    "text": "8210 son!",
+    "createdAt": "2026-09-28T09:18:11.146Z"
+  },
+  {
+    "type": "question",
+    "text": "Hvilken by bor du i?",
+    "createdAt": "2026-09-28T09:18:19.005Z"
+  },
+  {
+    "type": "answer",
+    "text": "8210 son!",
+    "createdAt": "2026-09-28T09:18:19.006Z"
   }
 ]
