@@ -41,9 +41,14 @@ messagesContainer.insertAdjacentHTML("beforeend", html)
 displayMessage({ type: "question", text: "Test" })
 
 questionForm.addEventListener("submit", async (event) =>{
+  console.log("SUBMIT EVENT");
   event.preventDefault();
+
+   console.log("AFTER PREVENT DEFAULT");
   const question = questionInput.value.trim();
   
+  console.log("BEFORE FETCH");
+
   // TODO: Send et POST-kald til `${API_URL}/messages` med fetch(). Husk:
   //   - method: "POST"
   //   - headers: { "Content-Type": "application/json" }
@@ -54,8 +59,9 @@ questionForm.addEventListener("submit", async (event) =>{
   body: JSON.stringify({ question })
 })
 
+console.log("AFTER FETCH");
   // TODO: await response.json() for at få { question, answer } tilbage, og log det med console.log(data).
 const data = await response.json()
 console.log(data)
-
+console.log("HANDLER ER HELT FÆRDIG");
 });
