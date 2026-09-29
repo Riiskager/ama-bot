@@ -18,7 +18,8 @@ console.log(messagesContainer, questionForm, questionInput, clearMessagesButton)
 
 function typeWriter(text) {
   if (i < text.length) {
-
+    questionInput.disabled = true;
+    questionInput.style.backgroundColor = "red"
     document.getElementsByClassName("svar")[0].style.display = "block";
     document.getElementById("demo").innerHTML += text.charAt(i);
     i++;
@@ -36,6 +37,8 @@ function typeWriter(text) {
       document.getElementById("image").src='./img/ask.png';
       document.getElementById("demo").innerHTML = "Stil mig et nyt spørgsmål!";
       i = 0;
+        questionInput.disabled = false;
+         questionInput.style.backgroundColor = ""
       setTimeout(fuck, 1000)
     } 
     function fuck(){

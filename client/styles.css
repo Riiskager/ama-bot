@@ -162,7 +162,7 @@ body{
     bottom: 15rem;
     
 }
-
+/* 
 .stats{
     position: absolute;
     bottom: 0;
@@ -182,7 +182,7 @@ body{
     padding: 1rem;
     border-radius: 1rem;
     background-color: #07c8f395 ;
-}
+} */
 
 .svar{
     display: none;
@@ -190,8 +190,9 @@ body{
     min-width: fit-content;
     left: 20rem;
     top: 8rem;
-    background-color: #00d0ff;
+    background-color: #ffb300bb;
     z-index: 200;
     padding: 2rem;
     border-radius: 2rem 2rem 2rem 0;
+    color: white;
 }

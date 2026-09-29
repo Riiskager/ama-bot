@@ -60,5 +60,29 @@
       "Min livret er lasagne.",
       "Lasagne, specifikt min moders"
     ]
+  },
+  {
+    "category": "velkommen",
+    "keywords": [
+      "hej",
+      "goddag",
+      "halløj",
+      "hva så?"
+    ],
+    "answers": [
+      "Hva så der mayn?",
+      "Quit the shit, stil mig et spørgsmål",
+      "Hvad vil du?"
+    ]
+  },
+  {
+    "category": "livet",
+    "keywords": [
+      "livet",
+      "meningen med livet"
+    ],
+    "answers": [
+      "42"
+    ]
   }
 ]
